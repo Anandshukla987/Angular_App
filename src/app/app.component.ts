@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ProductOrderComponent } from './product-order/product-order.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ProductOrderComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Product_List_App';

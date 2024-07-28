@@ -1,0 +1,50 @@
+.product-order-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    padding: 13px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  select {
+    width: 100%;
+    padding: 8px;
+    margin: 4px 0;
+  }
+  
+  .show-order-button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .show-order-button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .show-order-button:disabled {
+    background-color: lightgray;
+    cursor: not-allowed;
+  }

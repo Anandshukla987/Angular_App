@@ -1,1 +1,59 @@
-<p>product-order works!</p>
+<div class="product-order-container">
+    <h1>Product Order List</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of productOrders; let i = index">
+          <td>
+            <select [(ngModel)]="order.productName" [disabled]="order.disabled" required>
+              <option value="" disabled>Choose Product</option>
+              <option *ngFor="let product of products" [value]="product">{{ product }}</option>
+            </select>
+          </td>
+          <td>
+            <select [(ngModel)]="order.quantity" [disabled]="order.disabled" required>
+              <option value="" disabled>Choose Quantity</option>
+              <option *ngFor="let qty of quantities" [value]="qty">{{ qty }}</option>
+            </select>
+          </td>
+          <td>
+            <button (click)="addProductOrder(i)" [disabled]="!order.productName || order.quantity === null || order.disabled">ADD</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="show-order-button-container">
+      <button class="show-order-button" (click)="showOrder()">Show Order</button>
+    </div>
+    
+  
+    <div *ngIf="orderSubmitted">
+      <h2>Order Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of finalOrder">
+            <td>{{ order.productName }}</td>
+            <td>{{ order.quantity }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="show-order-button-container">
+      <button class="show-order-button" (click)="readOrderOutLoud()">What is my Order?</button>
+    </div>
+  </div>
+  
